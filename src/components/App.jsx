@@ -18,7 +18,7 @@ function App() {
         }, 200);
         return ()=> clearTimeout(timeout);
     }, [html, css, js]);
-    const [theme, setTheme] = useState("");
+    const [theme, setTheme] = useState("default");
     useEffect(()=>{
         const prevSelected = localStorage.getItem("code-editor-theme");
         if(prevSelected!==null){
