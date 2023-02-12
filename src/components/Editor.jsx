@@ -16,6 +16,10 @@ import 'codemirror/addon/edit/closetag'
 import 'codemirror/addon/edit/matchbrackets'
 import 'codemirror/addon/edit/matchtags'
 import 'codemirror/addon/edit/trailingspace'
+import 'codemirror/addon/hint/show-hint.js';
+import 'codemirror/addon/hint/javascript-hint.js'
+import 'codemirror/addon/hint/css-hint.js'
+import 'codemirror/addon/hint/html-hint.js'
 
 
 import { Controlled as ControlledEditor } from 'react-codemirror2';
@@ -45,7 +49,11 @@ function Editor({displayName, language, value, onChange, theme}) {
                 matchBrackets: true,
                 matchTags: true,
                 showTrailingSpace: true,
+                extraKeys: {
+                    "Tab": "autocomplete"
+                }
             }}
+            
         />
     </div>
   )
